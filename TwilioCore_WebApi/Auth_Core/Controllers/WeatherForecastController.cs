@@ -21,15 +21,19 @@ namespace Auth_Core.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public ActionResult Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+
+            // user.claims
+
+            var idClaim =  User.Claims.FirstOrDefault(w => w.Type.ToString().Equals("Onet.Claim", StringComparison.InvariantCultureIgnoreCase ));
+
+            if(idClaim == null)
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return BadRequest("No Claim");
+            }
+
+            return Ok($"This is yout id {idClaim.Value}");
         }
     }
 }

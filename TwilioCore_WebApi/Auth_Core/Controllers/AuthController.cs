@@ -36,6 +36,7 @@ namespace Auth_Core.Controllers
             claims.Add(new Claim(ClaimTypes.Role, "Admin"));
             claims.Add(new Claim(ClaimTypes.Role, "Reader"));
             claims.Add(new Claim("Onet.Claim", "OnetClaim"));
+            claims.Add(new Claim("id", "45678955"));
 
 
             //create token
