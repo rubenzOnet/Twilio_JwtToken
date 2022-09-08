@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="SMS\Entities\" />
+    <Folder Include="SMS\Responses\" />
+    <Folder Include="WhatsApp\Entities\" />
+    <Folder Include="WhatsApp\Responses\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Twilio" Version="5.79.0" />
+  </ItemGroup>
+
+</Project>
